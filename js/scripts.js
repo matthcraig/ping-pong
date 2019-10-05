@@ -1,20 +1,20 @@
-var pingPong = function() {
-    if (/*something*/) {
-      return true;
-    } else {
-      return false;
+var pingPong = function(entry) {
+    if (entry % 3 === 0) {
+      return "ping";
     }
-  };
-  
+    else if (entry % 5 === 0) {
+      return "pong";
+    }
+    else if (entry % 15 === 0) {
+      return "pingpong";
+    };
+};
+    
   $(document).ready(function() {
-    $("form#leap-year").submit(function(event) {
+    $("form#ping-pong").submit(function(event) {
       event.preventDefault();
       var entry = parseInt($("input#entry").val());
-      var result = pingPong;
-
-      $(".entry").text(entry);
-
+      var result = pingPong(entry);
+      $("#result").text(result);
     });
-    $("#result").show();
-
-    });
+});
