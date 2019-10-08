@@ -1,15 +1,16 @@
+
 var pingPong = function(entry) {
     if (entry % 15 === 0) {
-      return "pingpong";
+      return "PingPong!";
     }
     else if (entry % 5 === 0) {
-      return "pong";
+      return "Pong";
     }
     else if (entry % 3 === 0) {
-      return "ping";
+      return "Ping";
     }
     else if (entry % 15 !== 0 || entry % 5 !== 0 || entry % 3 !== 0) {
-        return "try again";
+        return entry;
     };
 };
 
