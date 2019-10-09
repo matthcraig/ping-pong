@@ -1,25 +1,27 @@
 
-var pingPong = function(entry) {
-    if (entry % 15 === 0) {
-      return "PingPong!";
-    }
-    else if (entry % 5 === 0) {
-      return "Pong";
-    }
-    else if (entry % 3 === 0) {
-      return "Ping";
-    }
-    else if (entry % 15 !== 0 || entry % 5 !== 0 || entry % 3 !== 0) {
-        return entry;
-    };
-};
+var pingPong = function(entry){
+  var entryArray = [];
+  for (var index = 1; index <= entry; index += 1){
+    entryArray.push(index);
+  }
+  entryArray.forEach(function(number){
+    if(number % 15 === 0){
+    entryArray[number] = "Pingpong";
+  } else if (number % 5 === 0){
+    entryArray[number] = "Pong"
+  } else if (number % 3 === 0){
+    entryArray[number] = 'Ping'
+  }
+});
+return entryArray;
+}
 
-    
-  $(document).ready(function() {
-    $("form#ping-pong").submit(function(event) {
-      event.preventDefault();
-      var entry = parseInt($("input#entry").val());
-      var result = pingPong(entry);
-      $("#result").text(result);
-    });
+$(document).ready(function() {
+$("form#ping-pong").submit(function(event){
+event.preventDefault();
+
+var entry = parseInt($("input#entry").val());
+var result = pingPong(entry);
+$("#result").text(result);
+});
 });
