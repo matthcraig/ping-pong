@@ -1,0 +1,16 @@
+body {
+    background-color: #F0FFFF;
+  }
+
+h1 {
+    color: #ADD8E6;
+}
+.button {
+    color: #800000;
+}
+.box {
+    width: 625px;
+    border: 10px solid gray;
+    padding: 50px;
+    margin: 20px;
+}
